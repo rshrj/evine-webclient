@@ -1,6 +1,6 @@
 {
-  "short_name": "Jai Ambe",
-  "name": "Jai Ambe Homes",
+  "short_name": "Evine",
+  "name": "Evine Realtors",
   "icons": [
     {
       "src": "/android-chrome-192x192.png?v=2.0",
@@ -15,6 +15,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#78621e",
-  "background_color": "#78621e"
+  "theme_color": "#fde8ed",
+  "background_color": "#fde8ed"
 }

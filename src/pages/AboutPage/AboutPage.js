@@ -5,6 +5,8 @@ import about1 from '../../assets/images/holistic-real-estate-deals.png';
 import about2 from '../../assets/images/consultancy-services.png';
 import about3 from '../../assets/images/trusted-realtor.png';
 import about4 from '../../assets/images/sole-mandate.png';
+import { content as contentText } from '../../config';
+
 import Footer from '../../components/Footer';
 
 const AboutCard = ({ title, text, picture }) => {
@@ -98,10 +100,10 @@ const AboutPage = () => {
           }}>
           <AboutCard
             title='Vision: Holistic Real Estate Deals'
-            text='At Jai Ambe Real Estate Consultants, we envision to build a ecosystem
+            text={`At ${contentText.about.card}, we envision to build a ecosystem
           where both customers and sellers are happy. We guarantee the perfect
           fit of homes for our customers and quick sales for the sellers
-          enlisted with us.'
+          enlisted with us.`}
             picture={about1}
           />
           <AboutCard

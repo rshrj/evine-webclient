@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import homeAdPlaceholder from '../../assets/images/homead-placeholder-2.png';
 
 import { getHomeAd } from '../../redux/slices/misc/miscSlice';
+import { content as contentText } from '../../config';
 
 const Poster = styled(Grid)(({ theme }) => ({
   backgroundImage: `url("${homeAdPlaceholder}")`,
@@ -66,7 +67,7 @@ const LandingHeader = () => {
             alignItems: 'stretch'
           }}>
           <Typography variant='h4' color='common.white' sx={{ maxWidth: 400 }}>
-            Helping Mumbaikars find their perfect places
+            Helping {contentText.landing.placePeople} find their perfect places
           </Typography>
           <Typography
             sx={{ marginBottom: 1, display: { xs: 'none', sm: 'block' } }}

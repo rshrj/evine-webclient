@@ -14,7 +14,6 @@ jobs:
       SSH_KEY: ${{ secrets.SSH_KEY }}
       SSH_HOST: ${{ secrets.SSH_HOST }}
       SSH_USER: ${{ secrets.SSH_USER }}
-      REACT_APP_APIURL: ${{ secrets.API_URL }}
     steps:
       - name: Pull the repo
         uses: actions/checkout@v2
@@ -37,7 +36,7 @@ jobs:
       - name: Enter maintainance mode on the server
         run: 'ssh deploy-machine "~/setMaintainance.sh -t"'
       - name: Copy the build to the server
-        run: 'rsync -a ${{ github.workspace }}/build deploy-machine:~/jaiambe/jah-web'
+        run: 'rsync -a ${{ github.workspace }}/build deploy-machine:~/evine/evine-webclient'
       - name: Restart Nginx
         run: 'ssh deploy-machine "sudo systemctl restart nginx"'
       - name: Exit maintainance mode

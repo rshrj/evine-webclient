@@ -4,15 +4,17 @@ import { Box, Link, Grid } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 
 import Logo from '../Logo';
+import { useTheme } from '@mui/material/styles';
 import styled from '@emotion/styled';
 import {
   FaFacebook,
   FaInstagram,
   FaTwitter,
-  FaLinkedinIn
+  FaLinkedinIn,
+  FaHeart
 } from 'react-icons/fa';
 
-import contactInfo from '../../constants/contactInfo.json';
+import { contact as contactInfo, content as contentText } from '../../config';
 
 const Icon = styled.div`
   width: 30px;
@@ -67,6 +69,8 @@ const icons = [
 ];
 
 const Footer = () => {
+  const theme = useTheme();
+
   const Icons = icons.map((m, i) => (
     <Link href={m.link} sx={{ color: 'black' }} underline='none' key={i}>
       {m.icon}
@@ -78,7 +82,7 @@ const Footer = () => {
       <Box
         sx={{
           pt: '50px',
-          backgroundColor: 'white',
+          backgroundColor: 'white'
         }}>
         <Grid container spacing={2} sx={{ mb: '30px' }}>
           <Grid container item sx={{ width: { xs: '100%', md: '40%' } }}>
@@ -89,7 +93,7 @@ const Footer = () => {
                 width: '100%',
                 margin: 'auto',
                 display: 'flex',
-                justifyContent: { xs: 'center', md: 'flex-start' },
+                justifyContent: { xs: 'center', md: 'flex-start' }
               }}>
               <Logo size={60} />
             </Grid>
@@ -99,11 +103,11 @@ const Footer = () => {
                 mt: '20px',
                 width: '100%',
                 display: 'flex',
-                justifyContent: 'center',
+                justifyContent: 'center'
               }}>
               <Content>
                 We build relationships that last a lifetime and help you get the
-                best real estate deals in Mumbai.
+                best real estate deals in {contentText.footer.place}.
               </Content>
             </Grid>
           </Grid>
@@ -112,14 +116,14 @@ const Footer = () => {
             item
             sx={{
               width: { xs: '100%', md: '60%' },
-              textAlign: { xs: 'center', md: 'left' },
+              textAlign: { xs: 'center', md: 'left' }
             }}>
             <Grid
               container
               item
               sx={{
                 width: { xs: '100%', md: '33.33%' },
-                mt: { xs: '20px', md: '0' },
+                mt: { xs: '20px', md: '0' }
               }}>
               <Grid item xs={12} sx={{ fontSize: '20px', mb: '10px' }}>
                 Links
@@ -130,7 +134,7 @@ const Footer = () => {
                     cursor: 'pointer',
                     textDecoration: 'none',
                     color: '#828282',
-                    fontSize: '15px',
+                    fontSize: '15px'
                   }}
                   to='/forbuyers?type=projects'
                   component={RouterLink}>
@@ -143,7 +147,7 @@ const Footer = () => {
                     cursor: 'pointer',
                     textDecoration: 'none',
                     color: '#828282',
-                    fontSize: '15px',
+                    fontSize: '15px'
                   }}
                   to='/forbuyers?type=apartments'
                   component={RouterLink}>
@@ -156,7 +160,7 @@ const Footer = () => {
                     cursor: 'pointer',
                     textDecoration: 'none',
                     color: '#828282',
-                    fontSize: '15px',
+                    fontSize: '15px'
                   }}
                   to='/fortenants'
                   component={RouterLink}>
@@ -169,7 +173,7 @@ const Footer = () => {
               item
               sx={{
                 width: { xs: '100%', md: '33.33%' },
-                mt: { xs: '20px', md: '0' },
+                mt: { xs: '20px', md: '0' }
               }}>
               <Grid item xs={12} sx={{ fontSize: '20px', mb: '10px' }}>
                 Legal
@@ -180,7 +184,7 @@ const Footer = () => {
                     cursor: 'pointer',
                     textDecoration: 'none',
                     color: '#828282',
-                    fontSize: '15px',
+                    fontSize: '15px'
                   }}
                   to='/tnc'
                   component={RouterLink}>
@@ -193,7 +197,7 @@ const Footer = () => {
                     cursor: 'pointer',
                     textDecoration: 'none',
                     color: '#828282',
-                    fontSize: '15px',
+                    fontSize: '15px'
                   }}
                   to='/privacy'
                   component={RouterLink}>
@@ -206,7 +210,7 @@ const Footer = () => {
                     cursor: 'pointer',
                     textDecoration: 'none',
                     color: '#828282',
-                    fontSize: '15px',
+                    fontSize: '15px'
                   }}
                   to='/about'
                   component={RouterLink}>
@@ -219,7 +223,7 @@ const Footer = () => {
               item
               sx={{
                 width: { xs: '100%', md: '33.33%' },
-                mt: { xs: '20px', md: '0' },
+                mt: { xs: '20px', md: '0' }
               }}>
               <Grid item xs={12} sx={{ fontSize: '20px', mb: '10px' }}>
                 Contact
@@ -230,7 +234,7 @@ const Footer = () => {
                     cursor: 'pointer',
                     textDecoration: 'none',
                     color: '#828282',
-                    fontSize: '15px',
+                    fontSize: '15px'
                   }}
                   href={`tel:${contactInfo.phone}`}>
                   {contactInfo.phone}
@@ -242,7 +246,7 @@ const Footer = () => {
                     cursor: 'pointer',
                     textDecoration: 'none',
                     color: '#828282',
-                    fontSize: '15px',
+                    fontSize: '15px'
                   }}
                   href={`mailto:${contactInfo.email}`}>
                   {contactInfo.email}
@@ -254,7 +258,7 @@ const Footer = () => {
                 sx={{
                   mt: '15px',
                   display: 'flex',
-                  justifyContent: { xs: 'center', md: 'flex-start' },
+                  justifyContent: { xs: 'center', md: 'flex-start' }
                 }}>
                 <IconsWrapper>
                   {Icons}
@@ -284,15 +288,18 @@ const Footer = () => {
             justifyContent: 'center',
             alignItems: 'center',
             fontSize: { xs: '11px', sm: '18px' },
+            wordSpacing: 1
           }}>
-          Created with love &nbsp;<span style={{ color: 'red' }}>♥</span> &nbsp;
-          by&nbsp;
-          <a
+          Created with love{' '}
+          <FaHeart style={{ margin: `0 ${theme.spacing(1)}` }} /> by
+          <Link
             href='https://zenoholics.com/'
             target='_blank'
-            rel='noopener noreferrer'>
+            rel='noopener noreferrer'
+            underline='hover'
+            sx={{ color: 'common.white', ml: 1 }}>
             Zenoholics
-          </a>
+          </Link>
           . © {new Date().getFullYear()} All Rights Reserved
         </Box>
       </Box>

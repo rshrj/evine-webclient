@@ -1,22 +1,23 @@
 import { createTheme } from '@mui/material/styles';
+import { theme as themeConfig } from '../config';
 
 const theme = createTheme({
   palette: {
     type: 'light',
     primary: {
-      main: '#ac8c2b',
+      main: themeConfig.primaryColor
     },
     secondary: {
-      main: '#2b4bac',
-      contrastText: 'rgba(255,255,255,0.9)',
+      main: themeConfig.secondaryColor,
+      contrastText: themeConfig.secondaryContrastText
     },
     background: {
-      default: '#fafafa',
-    },
+      default: themeConfig.backgroundColor
+    }
   },
   typography: {
-    fontFamily: '"Sen",  sans-serif',
-  },
+    fontFamily: themeConfig.fontFamily
+  }
 });
 
 export default theme;

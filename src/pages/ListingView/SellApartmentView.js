@@ -34,7 +34,7 @@ import { shortenedPriceWords } from '../../utils/helpers';
 import unitLabels from '../../constants/unitLabels';
 import colors from '../../constants/colors.json';
 import otherRoomLabels from '../../constants/otherRoomLabels';
-import contactInfo from '../../constants/contactInfo.json';
+import { contact as contactInfo, content as contentText } from '../../config';
 
 const SellApartmentView = ({ listing }) => {
   const theme = useTheme();
@@ -270,9 +270,9 @@ const SellApartmentView = ({ listing }) => {
             <Typography
               variant='body1'
               sx={{ marginBottom: 3, textAlign: 'justify' }}>
-              Jai Ambe Real Estate Consultants are here to help you with your
-              hunt for the best deal. With a track record of 10,000+ customers,
-              we excel in bringing smiles on faces.
+              {contentText.newlisting.name} are here to help you with your hunt
+              for the best deal. With a track record of 10,000+ customers, we
+              excel in bringing smiles on faces.
             </Typography>
             <Button
               variant='contained'

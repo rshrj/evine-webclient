@@ -2,7 +2,7 @@
 
 All Rights Reserved
 
-Copyright (c) Jai Ambe, Vijay
+Copyright (c) Zenoholics Pvt. Ltd., Ananya Shetty
 
 Created by Zenoholics Pvt. Ltd.
 

@@ -1,4 +1,6 @@
-export const apiUrl = process.env.REACT_APP_APIURL || 'http://localhost:5000';
+import { env } from '../config';
+
+export const apiUrl = env.apiUrl || 'http://localhost:5001/api/v1';
 
 export const errorWithToast = (message) =>
   new Error(message, {

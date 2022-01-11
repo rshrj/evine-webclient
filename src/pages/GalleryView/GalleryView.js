@@ -19,6 +19,7 @@ import {
 import { useTheme } from '@mui/material/styles';
 
 import locations from '../../constants/locations.json';
+import { content as contentText } from '../../config';
 
 import PropertyCard from '../../components/PropertyCard';
 import Footer from '../../components/Footer';
@@ -129,12 +130,14 @@ const GalleryView = ({ mode = 'buy', initTab = 0 }) => {
             color='primary.main'
             align='center'
             sx={{ marginBottom: 3 }}>
-            {mode === 'buy' ? 'Buy Homes in Mumbai' : 'Rent Homes in Mumbai'}
+            {mode === 'buy'
+              ? `Buy Homes in ${contentText.gallery.place}`
+              : `Rent Homes in ${contentText.gallery.place}`}
           </Typography>
           <Typography variant='body1' color='text.secondary' align='center'>
             {mode === 'buy'
-              ? "Make your move to Mumbai's best properties. Start hunting homes right away. Jai Ambe Advisory is here to ensure your best deal."
-              : "Get the perfect space for your needs. It's time to rent homes in Mumbai. Get the best deal on rents with Jai Ambe Advisory."}
+              ? `Make your move to ${contentText.gallery.place}'s best properties. Start hunting homes right away. ${contentText.gallery.name} is here to ensure your best deal.`
+              : `Get the perfect space for your needs. It's time to rent homes in ${contentText.gallery.place}. Get the best deal on rents with ${contentText.gallery.name}.`}
           </Typography>
           <SearchCard
             sx={{

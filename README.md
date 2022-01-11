@@ -1,1 +1,1 @@
-# Jai Ambe Homes React.js frontend
+# Evine demo React.js frontend

@@ -22,6 +22,7 @@ import { useNavigate } from 'react-router-dom';
 import { alpha, useTheme } from '@mui/material/styles';
 
 import locations from '../../constants/locations.json';
+import { content as contentText } from '../../config';
 
 import landing1 from '../../assets/images/marketing.png';
 import landing2 from '../../assets/images/trust.png';
@@ -172,7 +173,7 @@ const LandingPage = () => {
             variant={isPhone ? 'h4' : 'h3'}
             color='text.secondary'
             sx={{ marginTop: 5 }}>
-            Mumbai's Best Real Estate Consultant
+            {contentText.landing.place}'s Best Real Estate Consultant
           </Typography>
           <Typography
             textAlign='center'
@@ -199,7 +200,7 @@ const LandingPage = () => {
               variant={isPhone ? 'h4' : 'h3'}
               color='primary.main'
               sx={{ marginTop: 5, marginBottom: 1, paddingTop: 5 }}>
-              Why Jai Ambe Homes?
+              Why {contentText.landing.name}?
             </Typography>
             <Typography
               textAlign='center'
