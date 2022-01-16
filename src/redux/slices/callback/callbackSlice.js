@@ -7,10 +7,10 @@ import { arrayToObject } from '../../../utils/helpers';
 
 const initialState = {
   loading: 'init',
-  content:{
-    ids:[],
-    callbackrequests:{}
-  }
+  content: {
+    ids: [],
+    callbackrequests: {},
+  },
 };
 
 const submitCallBackRequest = createAsyncThunk(
@@ -39,8 +39,6 @@ const submitCallBackRequest = createAsyncThunk(
   }
 );
 
-
-
 const fetchCallBackRequests = createAsyncThunk(
   'callback/fetchCallBackRequests',
   async (arg, { dispatch }) => {
@@ -66,15 +64,37 @@ const fetchCallBackRequests = createAsyncThunk(
 
 const updateState = createAsyncThunk(
   'callback/updateState',
-  async ({callbackId, state}, { dispatch }) => {
+  async ({ callbackId, state }, { dispatch }) => {
     try {
-     
       const data = await callbackService.updateState(callbackId, state);
-      if(data.message){
+      if (data.message) {
         dispatch(addToast({ type: 'success', message: data.message }));
       }
       dispatch(fetchCallBackRequests());
-      
+    } catch (error) {
+      if (error.cause.toasts !== undefined && error.cause.toasts.length > 0) {
+        error.cause.toasts.forEach((toastMessage) =>
+          dispatch(addToast({ type: 'error', message: toastMessage }))
+        );
+      }
+      if (error.cause.errors !== undefined || error.cause.errors !== {}) {
+        dispatch(createFormErrors(error.cause.errors));
+      }
+
+      return Promise.reject(error);
+    }
+  }
+);
+
+const deleteCallbackRequest = createAsyncThunk(
+  'callback/deleteCallbackRequest',
+  async ({ callbackId }, { dispatch }) => {
+    try {
+      const data = await callbackService.deleteCallbackRequest(callbackId);
+      if (data.message) {
+        dispatch(addToast({ type: 'success', message: data.message }));
+      }
+      dispatch(fetchCallBackRequests());
     } catch (error) {
       if (error.cause.toasts !== undefined && error.cause.toasts.length > 0) {
         error.cause.toasts.forEach((toastMessage) =>
@@ -95,6 +115,15 @@ export const callbackSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
+    builder.addCase(deleteCallbackRequest.pending, (state, action) => {
+      state.loading = 'loading';
+    });
+    builder.addCase(deleteCallbackRequest.fulfilled, (state, action) => {
+      state.loading = 'idle';
+    });
+    builder.addCase(deleteCallbackRequest.rejected, (state, action) => {
+      state.loading = 'idle';
+    });
     builder.addCase(submitCallBackRequest.pending, (state, action) => {
       state.loading = 'loading';
     });
@@ -109,8 +138,8 @@ export const callbackSlice = createSlice({
     });
     builder.addCase(fetchCallBackRequests.fulfilled, (state, action) => {
       state.loading = 'idle';
-         state.content.callbackrequests = arrayToObject('_id', action.payload);
-         state.content.ids = action.payload.map((r) => r._id);
+      state.content.callbackrequests = arrayToObject('_id', action.payload);
+      state.content.ids = action.payload.map((r) => r._id);
     });
     builder.addCase(fetchCallBackRequests.rejected, (state, action) => {
       state.loading = 'idle';
@@ -124,9 +153,14 @@ export const callbackSlice = createSlice({
     builder.addCase(updateState.rejected, (state, action) => {
       state.loading = 'idle';
     });
-  }
+  },
 });
 
-export { submitCallBackRequest, fetchCallBackRequests, updateState };
+export {
+  submitCallBackRequest,
+  fetchCallBackRequests,
+  updateState,
+  deleteCallbackRequest,
+};
 
 export default callbackSlice.reducer;

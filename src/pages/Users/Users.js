@@ -37,7 +37,7 @@ const Users = () => {
   const data = useSelector((state) =>
     state.users.content.ids.map((id) => ({
       id,
-      ...state.users.content.users[id]
+      ...state.users.content.users[id],
     }))
   );
   const loading = useSelector(
@@ -69,7 +69,7 @@ const Users = () => {
         <Box
           sx={{
             display: 'inline-flex',
-            alignItems: 'center'
+            alignItems: 'center',
           }}>
           <FaUser color={theme.palette.primary.main} />
           <Link
@@ -79,7 +79,7 @@ const Users = () => {
             {params.value.first} {params.value.last}
           </Link>
         </Box>
-      )
+      ),
     };
     const fieldEmail = {
       field: 'email',
@@ -91,7 +91,7 @@ const Users = () => {
         <Box
           sx={{
             display: 'inline-flex',
-            alignItems: 'center'
+            alignItems: 'center',
           }}>
           <FaEnvelope color={theme.palette.text.secondary} />
           <Link
@@ -99,12 +99,12 @@ const Users = () => {
             sx={{
               fontWeight: 'bold',
               marginLeft: 2,
-              color: 'text.secondary'
+              color: 'text.secondary',
             }}>
             {params.value}
           </Link>
         </Box>
-      )
+      ),
     };
     const fieldPhone = {
       field: 'phone',
@@ -117,7 +117,7 @@ const Users = () => {
           <Box
             sx={{
               display: 'inline-flex',
-              alignItems: 'center'
+              alignItems: 'center',
             }}>
             <FaPhoneAlt color={theme.palette.text.secondary} />
             <Link
@@ -125,41 +125,14 @@ const Users = () => {
               sx={{
                 fontWeight: 'bold',
                 marginLeft: 2,
-                color: 'text.secondary'
+                color: 'text.secondary',
               }}>
               {params.value}
             </Link>
           </Box>
         );
-      }
+      },
     };
-    // const fieldState = {
-    //   field: 'state',
-    //   headerName: 'Status',
-    //   description: 'status of listing',
-    //   flex: 1,
-    //   align: 'center',
-    //   headerAlign: 'center',
-    //   renderCell: (params) => (
-    //     <Chip
-    //       color={
-    //         params.value === 'Approved'
-    //           ? 'success'
-    //           : params.value === 'Rejected'
-    //           ? 'error'
-    //           : 'warning'
-    //       }
-    //       size='small'
-    //       label={
-    //         params.value === 'Approved'
-    //           ? 'Approved'
-    //           : params.value === 'Rejected'
-    //           ? 'Rejected'
-    //           : 'Pending'
-    //       }
-    //     />
-    //   )
-    // };
     const fieldCreatedAt = {
       field: 'createdAt',
       headerName: 'Created on',
@@ -167,7 +140,7 @@ const Users = () => {
       flex: 0.7,
       renderCell: (params) => (
         <Typography>{format(new Date(params.value), 'MMM dd, yy')}</Typography>
-      )
+      ),
     };
     const fieldRole = {
       field: 'role',
@@ -187,7 +160,7 @@ const Users = () => {
             label={value === 'ADMIN' ? 'Admin' : 'Customer'}
           />
         );
-      }
+      },
     };
     const fieldActions = {
       field: 'actions',
@@ -207,7 +180,7 @@ const Users = () => {
         );
 
         return [actionDelete];
-      }
+      },
     };
 
     return [
@@ -216,7 +189,7 @@ const Users = () => {
       fieldPhone,
       fieldCreatedAt,
       fieldRole,
-      fieldActions
+      fieldActions,
     ];
   }, [theme]);
 
@@ -227,14 +200,14 @@ const Users = () => {
         m: { xs: 0, md: 1 },
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
       }}>
       <Typography
         variant='h4'
         sx={{
           textAlign: 'center',
           color: 'primary.main',
-          marginBottom: 3
+          marginBottom: 3,
         }}>
         Users
       </Typography>
@@ -244,7 +217,7 @@ const Users = () => {
           height: 600,
           width: { xs: '100vw', sm: '600px', md: '850px' },
           overflowX: { xs: 'scroll', md: 'hidden' },
-          px: 2
+          px: 2,
         }}>
         {loading && (
           <Box
@@ -257,7 +230,7 @@ const Users = () => {
               height: '100%',
               pt: 20,
               pb: 30,
-              backgroundColor: theme.palette.grey[0]
+              backgroundColor: theme.palette.grey[0],
             }}>
             <HashLoader
               color={theme.palette.primary.main}
@@ -272,14 +245,14 @@ const Users = () => {
               columns={columns}
               rows={data}
               components={{
-                NoRowsOverlay
+                NoRowsOverlay,
               }}
               sx={{
                 '& .MuiDataGrid-iconSeparator': {
-                  visibility: 'hidden'
+                  visibility: 'hidden',
                 },
                 border: 'none',
-                width: 800
+                width: 800,
               }}
               pageSize={10}
               rowsPerPageOptions={[10, 20, 50, 100]}
