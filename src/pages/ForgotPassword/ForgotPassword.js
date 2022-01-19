@@ -33,6 +33,13 @@ import { FaArrowLeft } from 'react-icons/fa';
 const ForgotPassword = () => {
   const theme = useTheme();
 
+   const [timer, setTimer] = useState(60);
+
+   useEffect(() => {
+     const time = timer > 0 && setInterval(() => setTimer(timer - 1), 1000);
+     return () => clearInterval(time);
+   }, [timer]);
+
   const [values, setValues] = useState({
     email: '',
     password: '',
@@ -83,6 +90,12 @@ const ForgotPassword = () => {
     dispatch(forgotPassword({ email: values.email }));
   };
 
+    const resendEmail = (event) => {
+      event.preventDefault();
+      setTimer(60);
+      dispatch(forgotPassword({ email: values.email }));
+    };
+
   const handleResetSubmit = (event) => {
     event.preventDefault();
     dispatch(
@@ -124,16 +137,41 @@ const ForgotPassword = () => {
     let data;
     if (requestSent) {
       data = (
-        <Typography
-          variant='body1'
-          sx={{
-            mb: 4,
-            mt: 2,
-            fontWeight: 'bold',
-            color: '#28a745',
-          }}>
-          Please check your email.
-        </Typography>
+        <>
+          <Typography
+            variant='body1'
+            sx={{
+              mb: 4,
+              mt: 2,
+              fontWeight: 'bold',
+              color: '#28a745',
+            }}>
+            Please check your email.
+          </Typography>
+          <FormControl
+            sx={{
+              textAlign: 'center',
+              mb: 2,
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'center',
+            }}>
+            <Button
+              disabled={timer !== 0}
+              variant='contained'
+              sx={{
+                width: '150px',
+                boxShadow: 'none',
+                '&:hover': {
+                  boxShadow: 'none',
+                },
+              }}
+              onClick={resendEmail}
+              color='primary'>
+              {timer !== 0 ? timer : 'Resend email'}
+            </Button>
+          </FormControl>
+        </>
       );
     } else {
       data = (
