@@ -10,7 +10,7 @@ import {
   Grid,
   TextareaAutosize,
   Link,
-  Chip
+  Chip,
 } from '@mui/material';
 import { JInputField } from '../../components/JInputField';
 import { DataGrid, GridActionsCellItem } from '@mui/x-data-grid';
@@ -21,7 +21,7 @@ import {
   FaCheck,
   FaTimes,
   FaQuoteLeft,
-  FaPhoneAlt
+  FaPhoneAlt,
 } from 'react-icons/fa';
 import { format } from 'date-fns';
 import { useTheme, styled } from '@mui/material/styles';
@@ -33,7 +33,7 @@ import {
   getAllTestimonials,
   updateTestimonialState,
   updateTestimonial,
-  deleteTestimonial
+  deleteTestimonial,
 } from '../../redux/slices/testimonials/testimonialsSlice';
 
 import DialogBox from '../../components/DialogBox';
@@ -55,7 +55,7 @@ const style = {
     'rgb(0 0 0 / 20%) 0px 2px 1px -1px, rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px',
   backgroundImage:
     'linear-gradient(rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05))',
-  overflow: 'hidden'
+  overflow: 'hidden',
 };
 
 const StyledTextareaAutosize = styled(TextareaAutosize)(({ theme }) => ({
@@ -65,14 +65,14 @@ const StyledTextareaAutosize = styled(TextareaAutosize)(({ theme }) => ({
   padding: theme.spacing(1),
   backgroundColor: 'inherit',
   '&:hover': {
-    borderColor: theme.palette.grey[600]
+    borderColor: theme.palette.grey[600],
   },
   '&:focus': {
-    borderColor: theme.palette.primary.main
+    borderColor: theme.palette.primary.main,
   },
   '&:focus-visible': {
-    borderColor: theme.palette.primary.main
-  }
+    borderColor: theme.palette.primary.main,
+  },
 }));
 
 const TestimonialView = ({ open, onClose, one, onCancel }) => {
@@ -91,7 +91,7 @@ const TestimonialView = ({ open, onClose, one, onCancel }) => {
               day: 'numeric',
               hour: '2-digit',
               minute: '2-digit',
-              second: '2-digit'
+              second: '2-digit',
             })}
           </Typography>
           <Typography
@@ -146,7 +146,7 @@ const TestimonialModal = ({ open, onClose, one, onCancel }) => {
     name: '',
     company: '',
     message: '',
-    phone: ''
+    phone: '',
   });
 
   useEffect(() => {
@@ -171,7 +171,7 @@ const TestimonialModal = ({ open, onClose, one, onCancel }) => {
         company: values.company,
         message: values.message,
         phone: values.phone,
-        cancelHandler: onCancel
+        cancelHandler: onCancel,
       })
     );
   };
@@ -197,7 +197,7 @@ const TestimonialModal = ({ open, onClose, one, onCancel }) => {
           sx={{
             display: 'flex',
             justifyContent: 'space-between',
-            alignItems: 'center'
+            alignItems: 'center',
           }}
           component='form'
           autoComplete='off'>
@@ -224,7 +224,7 @@ const TestimonialModal = ({ open, onClose, one, onCancel }) => {
                       style={{
                         color: theme.palette.text.secondary,
                         fontSize: 13,
-                        marginLeft: 1
+                        marginLeft: 1,
                       }}>
                       (Optional)
                     </span>
@@ -258,14 +258,14 @@ const TestimonialModal = ({ open, onClose, one, onCancel }) => {
               <FormLabel
                 sx={{
                   color: 'text.primary',
-                  marginBottom: 1
+                  marginBottom: 1,
                 }}>
                 <Typography
                   variant='body1'
                   color='text.primary'
                   sx={{
                     display: 'inline-block',
-                    marginRight: 1
+                    marginRight: 1,
                   }}>
                   Testimonial
                 </Typography>
@@ -323,7 +323,7 @@ const Testimonials = () => {
   const data = useSelector((state) =>
     state.testimonials.content.ids.map((id) => ({
       id,
-      ...state.testimonials.content.testimonials[id]
+      ...state.testimonials.content.testimonials[id],
     }))
   );
 
@@ -383,7 +383,7 @@ const Testimonials = () => {
         <Box
           sx={{
             display: 'inline-flex',
-            alignItems: 'center'
+            alignItems: 'center',
           }}>
           <FaQuoteLeft color={theme.palette.primary.main} />
           <Typography
@@ -393,7 +393,7 @@ const Testimonials = () => {
             {params.value}
           </Typography>
         </Box>
-      )
+      ),
     };
     const fieldCompany = {
       field: 'company',
@@ -406,11 +406,11 @@ const Testimonials = () => {
           sx={{
             fontWeight: params.value !== '' ? 'bold' : 'normal',
             marginLeft: 2,
-            color: 'text.secondary'
+            color: 'text.secondary',
           }}>
           {params.value !== '' ? params.value : 'NA'}
         </Typography>
-      )
+      ),
     };
     const fieldState = {
       field: 'show',
@@ -426,7 +426,7 @@ const Testimonials = () => {
           size='small'
           label={params.value ? 'Shown' : 'Hidden'}
         />
-      )
+      ),
     };
     const fieldCreatedAt = {
       field: 'createdAt',
@@ -435,7 +435,7 @@ const Testimonials = () => {
       flex: 1,
       renderCell: (params) => (
         <Typography>{format(new Date(params.value), 'MMM dd, yy')}</Typography>
-      )
+      ),
     };
     const fieldPhone = {
       field: 'phone',
@@ -448,7 +448,7 @@ const Testimonials = () => {
           <Box
             sx={{
               display: 'inline-flex',
-              alignItems: 'center'
+              alignItems: 'center',
             }}>
             <FaPhoneAlt color={theme.palette.text.secondary} />
             <Link
@@ -456,13 +456,13 @@ const Testimonials = () => {
               sx={{
                 fontWeight: 'bold',
                 marginLeft: 2,
-                color: 'text.secondary'
+                color: 'text.secondary',
               }}>
               {params.value}
             </Link>
           </Box>
         );
-      }
+      },
     };
     const fieldActions = {
       field: 'actions',
@@ -518,9 +518,9 @@ const Testimonials = () => {
           actionReject,
           actionView,
           actionEdit,
-          actionDelete
+          actionDelete,
         ];
-      }
+      },
     };
 
     return [
@@ -529,7 +529,7 @@ const Testimonials = () => {
       fieldCreatedAt,
       fieldPhone,
       fieldState,
-      fieldActions
+      fieldActions,
     ];
   }, [dispatch, theme]);
 
@@ -544,14 +544,14 @@ const Testimonials = () => {
         m: { xs: 0, md: 1 },
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center'
+        alignItems: 'center',
       }}>
       <Typography
         variant='h4'
         sx={{
           textAlign: 'center',
           color: 'primary.main',
-          marginBottom: 3
+          marginBottom: 3,
         }}>
         Testimonials
       </Typography>
@@ -561,7 +561,7 @@ const Testimonials = () => {
           height: 600,
           width: { xs: '100vw', sm: '600px', md: '850px' },
           overflowX: { xs: 'scroll', md: 'hidden' },
-          px: 2
+          px: 2,
         }}>
         {loading && (
           <Box
@@ -574,7 +574,7 @@ const Testimonials = () => {
               height: '100%',
               pt: 20,
               pb: 30,
-              backgroundColor: theme.palette.grey[0]
+              backgroundColor: theme.palette.grey[0],
             }}>
             <HashLoader
               color={theme.palette.primary.main}
@@ -589,14 +589,14 @@ const Testimonials = () => {
               columns={columns}
               rows={data}
               components={{
-                NoRowsOverlay
+                NoRowsOverlay,
               }}
               sx={{
                 '& .MuiDataGrid-iconSeparator': {
-                  visibility: 'hidden'
+                  visibility: 'hidden',
                 },
                 border: 'none',
-                width: 800
+                width: 800,
               }}
               pageSize={10}
               rowsPerPageOptions={[10, 20, 50, 100]}

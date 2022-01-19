@@ -12,7 +12,7 @@ import {
   ToggleButton,
   ToggleButtonGroup,
   Typography,
-  useMediaQuery
+  useMediaQuery,
 } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import { FaTimes } from 'react-icons/fa';
@@ -53,7 +53,7 @@ const SellProjectView = ({ listing, name }) => {
     usp,
     pictures,
     videoLink,
-    brochureLink
+    brochureLink,
   } = listing;
 
   let typesSorted = sortTypes(apartmentTypes);
@@ -94,7 +94,7 @@ const SellProjectView = ({ listing, name }) => {
                 sx={{
                   fontWeight: 'normal',
                   marginBottom: 1,
-                  color: 'text.secondary'
+                  color: 'text.secondary',
                 }}
                 component='div'>
                 {`${typesSorted
@@ -125,7 +125,7 @@ const SellProjectView = ({ listing, name }) => {
                       marginBottom: 1,
                       display: 'inline-block',
                       marginRight: 1,
-                      color: 'text.secondary'
+                      color: 'text.secondary',
                     }}
                     component='div'>
                     {`Starting from`}
@@ -138,7 +138,7 @@ const SellProjectView = ({ listing, name }) => {
                       marginBottom: 1,
                       display: 'inline-block',
                       marginRight: 1,
-                      color: 'text.secondary'
+                      color: 'text.secondary',
                     }}
                     component='div'>
                     ₹
@@ -148,7 +148,7 @@ const SellProjectView = ({ listing, name }) => {
                     sx={{
                       fontWeight: 'normal',
                       marginBottom: 1,
-                      display: 'inline-block'
+                      display: 'inline-block',
                     }}
                     component='div'>
                     {shortenedPriceWords(
@@ -179,7 +179,7 @@ const SellProjectView = ({ listing, name }) => {
                 width: '100%',
                 height: 400,
                 overflowY: 'hidden',
-                p: 2
+                p: 2,
               }}>
               <ImageList variant='masonry' cols={2} gap={10}>
                 {pictures.map((picture) => (
@@ -194,7 +194,7 @@ const SellProjectView = ({ listing, name }) => {
                 display: 'flex',
                 flexDirection: isPhone ? 'column' : 'row',
                 justifyContent: isPhone ? 'flex-start' : 'space-between',
-                alignItems: 'center'
+                alignItems: 'center',
               }}>
               <Typography
                 color='text.secondary'
@@ -204,8 +204,8 @@ const SellProjectView = ({ listing, name }) => {
                   m: 1,
                   '&:hover': {
                     cursor: 'pointer',
-                    textDecoration: 'underline'
-                  }
+                    textDecoration: 'underline',
+                  },
                 }}>
                 Click to enlarge
               </Typography>
@@ -227,7 +227,7 @@ const SellProjectView = ({ listing, name }) => {
               sx={{
                 color: '#fff',
                 zIndex: (theme) => theme.zIndex.drawer + 1,
-                backgroundColor: 'rgba(0, 0, 0, 0.9)'
+                backgroundColor: 'rgba(0, 0, 0, 0.9)',
               }}
               open={backdropShown}
               onClick={handleCloseBackdrop}>
@@ -237,13 +237,13 @@ const SellProjectView = ({ listing, name }) => {
                   width: '100vw',
                   height: '100vh',
                   overflowY: 'scroll',
-                  p: { xs: 2, sm: 10 }
+                  p: { xs: 2, sm: 10 },
                 }}>
                 <Box
                   sx={{
                     display: 'flex',
                     justifyContent: 'flex-end',
-                    color: '#fff'
+                    color: '#fff',
                   }}>
                   <FaTimes fontSize={30} />
                 </Box>
@@ -265,7 +265,7 @@ const SellProjectView = ({ listing, name }) => {
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'flex-start',
-              height: 'fit-content'
+              height: 'fit-content',
             }}>
             <Typography
               variant='h5'
@@ -273,16 +273,16 @@ const SellProjectView = ({ listing, name }) => {
                 fontWeight: 'bold',
                 marginBottom: 3,
                 textAlign: 'center',
-                color: 'primary.main'
+                color: 'primary.main',
               }}>
               Get more details about this property
             </Typography>
             <Typography
               variant='body1'
               sx={{ marginBottom: 3, textAlign: 'justify' }}>
-              {contentText.newlisting.name} are here to help you with your
-              hunt for the best deal. With a track record of 10,000+ customers,
-              we excel in bringing smiles on faces.
+              {contentText.newlisting.name} are here to help you with your hunt
+              for the best deal. With a track record of 10,000+ customers, we
+              excel in bringing smiles on faces.
             </Typography>
             <Button
               variant='contained'
@@ -309,7 +309,7 @@ const SellProjectView = ({ listing, name }) => {
               sx={{
                 display: 'inline-block',
                 color: 'text.secondary',
-                marginRight: 2
+                marginRight: 2,
               }}>
               Availability Status:
             </Typography>
@@ -334,7 +334,7 @@ const SellProjectView = ({ listing, name }) => {
               sx={{
                 display: 'inline-block',
                 color: 'text.secondary',
-                marginRight: 2
+                marginRight: 2,
               }}>
               Ownership Type:
             </Typography>
@@ -358,7 +358,7 @@ const SellProjectView = ({ listing, name }) => {
             alignItems: 'center',
             justifyContent: isPhone ? 'center' : 'flex-start',
             mt: 2,
-            paddingLeft: 0
+            paddingLeft: 0,
           }}>
           {/* <Box sx={{ marginLeft: 2 }}>
             <Typography variant='h5' color='primary.main' component='div'>
@@ -395,7 +395,7 @@ const SellProjectView = ({ listing, name }) => {
             onChange={handleTypesToggle}
             sx={{
               textDecoration: 'none',
-              width: '100%'
+              width: '100%',
             }}>
             {typesSorted.map((type) => (
               <ToggleButton value={type} key={type} aria-label='sell project'>
@@ -405,7 +405,7 @@ const SellProjectView = ({ listing, name }) => {
                     justiftContent: 'center',
                     alignItems: 'center',
                     textDecoration: 'none',
-                    px: { xs: 7, md: 4 }
+                    px: { xs: 7, md: 4 },
                   }}>
                   <Box
                     sx={{
@@ -414,7 +414,7 @@ const SellProjectView = ({ listing, name }) => {
                       justiftContent: 'center',
                       alignItems: 'center',
                       textDecoration: 'none',
-                      marginLeft: 2
+                      marginLeft: 2,
                     }}>
                     <Typography>{unitLabels[type]}</Typography>
                   </Box>
@@ -433,29 +433,30 @@ const SellProjectView = ({ listing, name }) => {
               coveredParking,
               openParking,
               ageOfProperty,
-              totalFloors
+              totalFloors,
             }}
             apartmentType={enabledType}
           />
         )}
       </Grid>
-
-      <Box sx={{ mt: 2 }}>
-        <Typography variant='h5' color='text.primary'>
-          Project brochure
-        </Typography>
-        <Typography variant='body1' color='text.secondary' sx={{ mt: 1 }}>
-          <Button
-            href={brochureLink}
-            target='_blank'
-            rel='noopener noreferrer'
-            underline='hover'
-            component={Link}
-            variant='outlined'>
-            Click to download
-          </Button>
-        </Typography>
-      </Box>
+      {brochureLink ? (
+        <Box sx={{ mt: 2 }}>
+          <Typography variant='h5' color='text.primary'>
+            Project brochure
+          </Typography>
+          <Typography variant='body1' color='text.secondary' sx={{ mt: 1 }}>
+            <Button
+              href={brochureLink}
+              target='_blank'
+              rel='noopener noreferrer'
+              underline='hover'
+              component={Link}
+              variant='outlined'>
+              Click to download
+            </Button>
+          </Typography>
+        </Box>
+      ) : null}
 
       <Box sx={{ mt: 2 }}>
         <Typography variant='h5' color='text.primary'>
