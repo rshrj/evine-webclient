@@ -1,13 +1,13 @@
 import { Box } from '@mui/system';
 
-import logoVector from '../../assets/vectors/logo-noshadow.svg';
+import logoVector from '../../assets/vectors/logo.png';
 
 const Logo = ({ size, ...sx }) => {
   return (
     <Box
       component='div'
       sx={{
-        width: 2.9 * size,
+        width: 4 * size,
         height: size,
         backgroundImage: `url(${logoVector})`,
         backgroundSize: 'cover',

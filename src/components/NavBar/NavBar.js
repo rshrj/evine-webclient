@@ -129,7 +129,7 @@ const NavBar = () => {
               component={RouterLink}
               to='/'
               sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}>
-              <Logo size={60} />
+              <Logo size={40} />
             </StyledToolbar>
 
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -220,7 +220,7 @@ const NavBar = () => {
               sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
               component={RouterLink}
               to='/'>
-              <Logo size={50} />
+              <Logo size={30} />
             </StyledToolbar>
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
               {pages.map((page) => (

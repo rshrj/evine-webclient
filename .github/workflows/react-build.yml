@@ -6,7 +6,6 @@ on:
       - '**.md'
     branches:
       - deployed
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
