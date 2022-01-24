@@ -173,7 +173,7 @@ const LandingPage = () => {
             variant={isPhone ? 'h4' : 'h3'}
             color='text.secondary'
             sx={{ marginTop: 5 }}>
-            {contentText.landing.place}'s Best Real Estate Consultant
+            Nashik's Leading Construction Firm
           </Typography>
           <Typography
             textAlign='center'
@@ -200,14 +200,14 @@ const LandingPage = () => {
               variant={isPhone ? 'h4' : 'h3'}
               color='primary.main'
               sx={{ marginTop: 5, marginBottom: 1, paddingTop: 5 }}>
-              Why {contentText.landing.name}?
+              About {contentText.landing.name}
             </Typography>
             <Typography
               textAlign='center'
               variant={isPhone ? 'subtitle1' : 'h6'}
               color='text.secondary'>
-              Finding your dream home is our real passion. Leave the hard work
-              to experts.
+              Do not worry if you have built castles in air. They are where they
+              should be. We will put the foundation under them.
             </Typography>
           </Box>
 
@@ -239,13 +239,13 @@ const LandingPage = () => {
                 src={landing1}
                 width='100px'
                 height='100px'
-                alt='Marketing Powerhouse'
+                alt='Inventive Developer'
               />
               <Typography variant='h6' sx={{ marginTop: 3 }}>
-                Marketing Powerhouse
+                Inventive Developer
               </Typography>
               <Typography variant='subtitle2' color='text.secondary'>
-                Extensive connections
+                Latest technology
               </Typography>
             </Paper>
 
@@ -274,7 +274,7 @@ const LandingPage = () => {
                 Trusted Transactions
               </Typography>
               <Typography variant='subtitle2' color='text.secondary'>
-                Verified sellers and buyers
+                Excellent track record
               </Typography>
             </Paper>
 
@@ -303,7 +303,7 @@ const LandingPage = () => {
                 Best Deals
               </Typography>
               <Typography variant='subtitle2' color='text.secondary'>
-                Large property database
+                Amazing projects
               </Typography>
             </Paper>
 
@@ -332,7 +332,7 @@ const LandingPage = () => {
                 Stellar Performance
               </Typography>
               <Typography variant='subtitle2' color='text.secondary'>
-                Finding the right fit for buyers
+                On time delivery for buyers
               </Typography>
             </Paper>
 
@@ -352,13 +352,13 @@ const LandingPage = () => {
                 m: 2
               }}>
               <Typography variant='h2' color='primary.main'>
-                10,000+
+                150+
               </Typography>
               <Typography variant='h6' sx={{ marginTop: 3 }}>
-                Happy Customers
+                Successful Projects
               </Typography>
               <Typography variant='subtitle2' color='text.secondary'>
-                Pairing the dream homes
+                Pairing the dream spaces
               </Typography>
             </Paper>
 
@@ -378,7 +378,7 @@ const LandingPage = () => {
                 m: 2
               }}>
               <Typography variant='h2' color='primary.main'>
-                21+
+                28+
               </Typography>
               <Typography variant='h6' sx={{ marginTop: 3 }}>
                 Successful Years

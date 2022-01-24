@@ -7,7 +7,7 @@ const Logo = ({ size, ...sx }) => {
     <Box
       component='div'
       sx={{
-        width: 4 * size,
+        width: 4.1 * size,
         height: size,
         backgroundImage: `url(${logoVector})`,
         backgroundSize: 'cover',

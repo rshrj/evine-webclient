@@ -4,8 +4,7 @@ import { Box, useTheme } from '@mui/system';
 import about1 from '../../assets/images/holistic-real-estate-deals.png';
 import about2 from '../../assets/images/consultancy-services.png';
 import about3 from '../../assets/images/trusted-realtor.png';
-import about4 from '../../assets/images/sole-mandate.png';
-import { content as contentText } from '../../config';
+import about4 from '../../assets/images/architecture-about-4.jpg';
 
 import Footer from '../../components/Footer';
 
@@ -82,15 +81,15 @@ const AboutPage = () => {
             color='primary.main'
             align='center'
             sx={{ marginBottom: 3 }}>
-            Get Homes Sold Fast
+            Trustworthy and Inventive Developers
           </Typography>
           <Typography
             variant='body1'
             color='text.secondary'
             align='center'
             sx={{ px: { xs: 0, sm: 15 } }}>
-            With our lead database of over 50,000 people we have served over
-            10,000 happy customers for the past 21 years.
+            Founded in 1994, Madhoor Group is a leading construction company
+            with its registered office in Mumbai, Maharashtra.
           </Typography>
         </Box>
 
@@ -99,11 +98,8 @@ const AboutPage = () => {
             py: 5
           }}>
           <AboutCard
-            title='Vision: Holistic Real Estate Deals'
-            text={`At ${contentText.about.card}, we envision to build a ecosystem
-          where both customers and sellers are happy. We guarantee the perfect
-          fit of homes for our customers and quick sales for the sellers
-          enlisted with us.`}
+            title='Vision: Brilliant Construction'
+            text={`Madhoor Group is a pioneer in the construction field, having changed the face of the city of Nashik. We have executed over 150 projects including prestigious projects such as hospitals, college buildings, housing colonies and other commercial buildings for the government as well as non-government organizations.`}
             picture={about1}
           />
           <AboutCard
@@ -112,13 +108,14 @@ const AboutPage = () => {
             picture={about2}
           />
           <AboutCard
-            title='Trusted Realtor'
-            text='Trust is the foremost foundation of our consulting firm and we ensure that all the parties involved get the best service possible. We look out for the interests of home buyers and tenants who choose to deal with us.'
+            title='Stellar Team'
+            text='We are ably guided by our directors and have many specialized units which function in harmony to develop landmark projects. With the restoration work of the 250-year-old
+            Kalaram Temple at Panchvati, Nashik, the company has added yet another dimension to their field of expertise.'
             picture={about3}
           />
           <AboutCard
-            title='Sole Mandate'
-            text='Our 360° approach to project sales with generating leads, prospecting them, closing them, ensuring loan approval, and guiding throughout stamp duty and registration process helps us achieve a sold-out tag quickly. Reach out to us to give sole mandate to your project now.'
+            title='Revolutionary Team'
+            text='Daring to think ahead of the times and the unfaltering dedication and honesty of the entire team has changed the image of Nashik from a small temple town to the city of dreams.'
             picture={about4}
           />
         </Box>
