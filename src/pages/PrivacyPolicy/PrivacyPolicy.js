@@ -2,6 +2,7 @@ import { Container, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import Footer from '../../components/Footer';
 import './styles.css';
+import { content as contentText, contact } from '../../config';
 
 const PrivacyPolicy = () => {
   return (
@@ -23,7 +24,7 @@ const PrivacyPolicy = () => {
             </p>
             <p class='c8'>
               <span class='c3'>https://</span>
-              <span class='c6'>jaiambeadvisory.com</span>
+              <span class='c6'>{`${contentText.siteName}`}</span>
             </p>
             <p class='c4'>
               <span class='c2'>
@@ -51,7 +52,7 @@ const PrivacyPolicy = () => {
                 c) PARTIES: The parties to this privacy policy are the following
                 data controller:
               </span>
-              <span class='c6'>Jai Ambe</span>
+              <span class='c6'>{`${contentText.landing.name}`}</span>
               <span class='c3'>
                 &nbsp;(&quot;Data Controller&quot;) and you, as the user of this
                 Website. Hereinafter, the parties will individually be referred
@@ -151,13 +152,13 @@ const PrivacyPolicy = () => {
                 The Party responsible for the processing of your personal data
                 is as follows:
               </span>
-              <span class='c6'>Jai Ambe</span>
+              <span class='c6'>{`${contentText.landing.name}`}</span>
               <span class='c3'>
                 . The Data Controller may be contacted as follows:
               </span>
             </p>
             <p class='c1'>
-              <span class='c6'>info@jaiambeadvisory.com</span>
+              <span class='c6'>{`${contact.email}`}</span>
             </p>
             <p class='c4'>
               <span class='c3'>
@@ -920,7 +921,7 @@ const PrivacyPolicy = () => {
                 other information. If you wish to opt-out of such
                 communications, you may contact the following email:{' '}
               </span>
-              <span class='c6'>info@jaiambeadvisory.com</span>
+              <span class='c6'>{`${contact.email}`}</span>
               <span class='c3'>
                 . You may also click the opt-out link which will be provided at
                 the bottom of any and all such communications.
@@ -1052,7 +1053,7 @@ const PrivacyPolicy = () => {
                 a complaint about anything related to this Privacy Policy, you
                 may contact us at the following email address:{' '}
               </span>
-              <span class='c6'>info@jaiambeadvisory.com</span>
+              <span class='c6'>{`${contact.email}`}</span>
               <span class='c3'>.</span>
             </p>
             <div>

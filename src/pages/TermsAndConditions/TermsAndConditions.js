@@ -4,6 +4,8 @@ import Footer from '../../components/Footer';
 
 import './tncStyles.css';
 
+import { contact, content as contentText } from '../../config';
+
 const TermsAndConditions = () => {
   return (
     <>
@@ -25,7 +27,7 @@ const TermsAndConditions = () => {
             </p>
             <p class='c8'>
               <span class='c2 c9'>Site Covered: </span>
-              <span class='c4 c9'>jaiambeadvisory.com</span>
+              <span class='c4 c9'>{`${contentText.siteName}`}</span>
             </p>
             <p class='c0'>
               <span class='c2 c5'>
@@ -37,7 +39,7 @@ const TermsAndConditions = () => {
                 &nbsp;The use of this website and services on this website
                 provided by{' '}
               </span>
-              <span class='c4'>Jai Ambe</span>
+              <span class='c4'>{`${contentText.landing.name}`}</span>
               <span class='c2'>
                 &nbsp;(hereinafter referred to as &quot;Company&quot;) are
                 subject to the following Terms &amp; Conditions (hereinafter the
@@ -67,7 +69,7 @@ const TermsAndConditions = () => {
                 publisher of the Website, makes the Website, and certain
                 Services on it, available to users.{' '}
               </span>
-              <span class='c4'>Jai Ambe</span>
+              <span class='c4'>{`${contentText.landing.name}`}</span>
               <span class='c2'>
                 , Company, Us, We, Our, Ours and other first-person pronouns
                 will refer to the Company, as well as all employees and
@@ -413,7 +415,7 @@ const TermsAndConditions = () => {
                 questions, concerns, or disputes, You agree to contact Us in a
                 timely manner at the following:{' '}
               </span>
-              <span class='c4'>info@jaiambeadvisory.com</span>
+              <span class='c4'>{`${contact.email}`}</span>
               <span class='c2'>.</span>
             </p>
             <p class='c0'>
@@ -813,7 +815,7 @@ const TermsAndConditions = () => {
                 under this Agreement, including e-mail or fax. For any questions
                 or concerns, please email Us at the following address:{' '}
               </span>
-              <span class='c4'>info@jaiambeadvisory.com</span>
+              <span class='c4'>{`${contact.email}`}</span>
               <span class='c2'>.</span>
             </p>
             <div>
