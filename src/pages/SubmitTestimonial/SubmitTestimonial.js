@@ -16,7 +16,7 @@ import { useTheme, styled } from '@mui/material/styles';
 
 import { clearFormErrors } from '../../redux/slices/errors/errorsSlice';
 import { submitTestimonial } from '../../redux/slices/testimonials/testimonialsSlice';
-import illustration from '../../assets/vectors/submit-testimonial.svg';
+import illustration from '../../assets/vectors/submit-testimonial.png';
 import Footer from '../../components/Footer';
 import Testimonials from '../LandingPage/Testimonials';
 

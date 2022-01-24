@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Button, Container, FormGroup, Grid, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 
-import illustration from '../../assets/vectors/illustration.svg';
+import illustration from '../../assets/vectors/illustration.png';
 import { clearFormErrors } from '../../redux/slices/errors/errorsSlice';
 import { submitCallBackRequest } from '../../redux/slices/callback/callbackSlice';
 

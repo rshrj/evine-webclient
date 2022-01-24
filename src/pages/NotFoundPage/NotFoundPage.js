@@ -2,7 +2,7 @@ import { Container, Grid, Typography, Link } from '@mui/material';
 import { Box } from '@mui/system';
 import { Link as RouterLink } from 'react-router-dom';
 
-import notFoundIllustration from '../../assets/vectors/not-found-illustration.svg';
+import notFoundIllustration from '../../assets/vectors/not-found.png';
 import Footer from '../../components/Footer';
 import NavBar from '../../components/NavBar';
 
